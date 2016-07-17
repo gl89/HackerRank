@@ -2,7 +2,7 @@
 Gabriel Loterena
 7/15/2016
 Hackerrank 
-Diagonal Difference Challenge
+Diagonal Difference Challeng
 */
 
 import java.io.*;
