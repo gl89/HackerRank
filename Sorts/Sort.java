@@ -2,27 +2,19 @@ import java.util.Arrays;
 
 public class Sort{
    
-   public static int[] merge(int[] a, int[] b) {
-
+   public static int[] mergesort(int[] a, int[] b) {
       int[] answer = new int[a.length + b.length];
       int i = 0, j = 0, k = 0;
-
-      while (i < a.length && j < b.length)
-      {
+      while (i < a.length && j < b.length){
         if (a[i] < b[j])       
             answer[k++] = a[i++];
-
         else        
             answer[k++] = b[j++];               
       }
-
       while (i < a.length)  
             answer[k++] = a[i++];
-
-
       while (j < b.length)    
          answer[k++] = b[j++];
-
       return answer;
    }
 
@@ -57,7 +49,7 @@ public class Sort{
             quickSort(arr, index, right);
    }
 
-   public static void SelectionSort ( int [ ] num ){
+   public static void SelectionSort ( int [] num ){
      int i, j, first, temp;  
      for ( i=num.length-1; i > 0;i-- ) {
           first = 0;   //initialize to subscript of first element
@@ -106,7 +98,7 @@ public class Sort{
    System.out.println("Merge Sort"); 
    int[] d = new int[]{1,2,3,4,5,6,7,8,9,10};
    int[] f = new int[]{3,5,6,7,8,11,13,14};
-   System.out.println(Arrays.toString(merge(d,f)));
+   System.out.println(Arrays.toString(mergesort(d,f)));
    
    }
 }
