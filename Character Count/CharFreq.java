@@ -4,7 +4,7 @@ import java.io.*;
 public class CharFreq{
    public static void main(String[] args)throws Exception{
    
-   Map<Character,Integer> freq = new HashMap<Character,Integer>();
+   Map<Character,Integer> freq = new TreeMap<Character,Integer>();
 
     String  thisLine = null;
       try{
@@ -25,7 +25,7 @@ public class CharFreq{
       }
       
       System.out.println(freq.entrySet());
-      
+      br.close();
       }catch(Exception e){
          e.printStackTrace();
       }

@@ -63,6 +63,26 @@ public class BinaryTree{
       }
    }
    
+  static void BFSearch(Node root,int key){
+      Queue<Node> q = new LinkedList<Node>();
+      if(root==null)
+         return;
+      q.add(root);
+      while(!q.isEmpty()){
+         Node n = (Node)q.remove();
+         System.out.print(n.data+ " ");
+         if(n.data==key){
+            System.out.println(key + " Found in tree.");
+            return;
+         }
+         if(n.left!=null)           
+           q.add(n.left);
+         if(n.right!=null)
+           q.add(n.right);
+      }
+      System.out.println(key + " Not Found in tree.");
+   }
+   
    
    static void found(Node p, int key){
       if(search(p,key)==1){
@@ -143,6 +163,8 @@ public class BinaryTree{
          
       found(b.root,5);
       found(b.root,10);
+      BFSearch(b.root,5);
+      BFSearch(b.root,10);
       System.out.print("Inorder ");
       inorder(b.root);
       System.out.println();
@@ -158,7 +180,7 @@ public class BinaryTree{
       System.out.println("Leaves of this tree");
       Leaves(b.root);
       System.out.println();
-      System.out.print(CountLeaves(b.root));
+      System.out.print("The number of leaves " + CountLeaves(b.root));
       System.out.println();
       System.out.println("Check height");
       System.out.println("b " + checkBalance(b.root));
