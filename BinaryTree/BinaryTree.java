@@ -100,6 +100,26 @@ public class BinaryTree{
       return 0; // statement never reached
    } 
    
+   void top_view(Node root){
+    left(root.left);
+    System.out.print(root.data+" ");
+    right(root.right);
+   }
+
+   void left(Node p){
+      if(p==null)
+          return;
+      left(p.left);
+      System.out.print(p.data+" ");
+   }
+    
+   void right(Node p){
+      if(p==null)
+          return;
+      System.out.print(p.data+" ");
+      right(p.right);
+   }
+   
    static void Leaves(Node p){
       if(p==null)
          return;
@@ -127,6 +147,12 @@ public class BinaryTree{
 			return "tree is not balanced.";
 		}
 	}
+   
+   static int height(Node root){
+      if(root==null)
+         return -1;//you don't count root as part of the height
+      return 1+Math.max(height(root.left),height(root.right));
+    }
 
    public static int isBalanced(Node root){
 		if(root==null){
@@ -147,6 +173,24 @@ public class BinaryTree{
 		return 1 + Math.max(leftH, rightH);
 	}
 
+ 
+    /* Returns true if given search tree is binary
+       search tree (efficient version) */
+    static boolean isBST(Node node){
+        Node prev = node;
+        // traverse the tree in inorder fashion and
+        // keep a track of previous node
+        if (node != null){
+            if (!isBST(node.left))
+                return false;
+            // allows only distinct values node
+            if (prev != null && node.data <= prev.data )
+                return false;
+            prev = node;
+            return isBST(node.right);
+        }
+        return true;
+   }
    
    public static void main(String[] args){
       // Node n=new Node(42);
@@ -185,5 +229,8 @@ public class BinaryTree{
       System.out.println("Check height");
       System.out.println("b " + checkBalance(b.root));
       System.out.println("c "  + checkBalance(c.root));
+      System.out.println("Height");
+      System.out.println(height(b.root));
+      System.out.println(isBST(b.root));
    }
 }
