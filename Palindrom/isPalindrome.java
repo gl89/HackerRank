@@ -30,6 +30,8 @@ public class isPalindrome{
    System.out.println(isPalindrome.isIT("rain"));
    System.out.println(isPalindrome.isIT("aaaaaaacaaaaaaaaaaaaa"));
    System.out.println(isPalindrome.isIT("abcdefedcba"));
+   System.out.println(isPalindrome.isIT("a a a"));
+   System.out.println(isPalindrome.isIT("aabaa aabaa"));
    ;
    }
 }

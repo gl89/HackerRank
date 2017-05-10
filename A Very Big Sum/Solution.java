@@ -1,6 +1,6 @@
 /*
 Gabriel Loterena
-7/12/2016
+7/12/2017
 Hackerrank 
 Numbers bigger than 2^32 need long to work. I typecasted it to long.
 Similar problem in Codility. 
