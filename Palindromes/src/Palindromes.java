@@ -9,7 +9,8 @@ public class Palindromes {
 		
 
 		for(int i=0;i<l;i++){
-			
+			StringBuilder sb = new StringBuilder();	
+			sb.append(s.charAt(i));
 			
 			
 		}
