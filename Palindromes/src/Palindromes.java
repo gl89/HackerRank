@@ -6,11 +6,14 @@ import java.util.*;
 public class Palindromes {
 	static void expand(String s,int low, int high,Set<String> a){
 		
-		while(low >=0 && high < s.length() && s.charAt(low) == s.charAt(high)){
+		while(low >= 0 && high < s.length() && (s.charAt(low) == s.charAt(high))){
 			
-			a.add(s.substring(low, high - low + 1));
+			//we don't like single letters
+			if(s.substring(low, high + 1).length() != 1){
+					a.add(s.substring(low, high + 1));
+			}
 			
-			low--;
+		    low--;
 			high++;
 		}
 		
@@ -28,16 +31,14 @@ public class Palindromes {
 			expand(s,i,i+1,Palindromes);
 		}
 		
-		/*
 		for(String a : Palindromes){
-			System.out.println(a);
-			
+			System.out.println(a);	
 		}
-		*/
 		
+	
 	}
 	public static void main(String[] args){
-		Palindromes.allPalindromes("aaaabbbaaaa");
+		Palindromes.allPalindromes("abbaeae");
 		
 	}
 }
