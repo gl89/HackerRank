@@ -1,24 +1,43 @@
-//Probably not the best method to find palindromes, but the idea is
-//we will be going through the string and find all instances of substring
-//palindroms by using Stringbuilder to create a sub string character by character 
-//and then reversing. If they're equal they should be palindromes.
+import java.util.*;
+
+//To find each palindrome substring in a string, we will treat every character as a pivot and expand from that character
+//we will also find every instance odd or even
 
 public class Palindromes {
-	static void PalindromesFinder(String s){
-		int l = s.length();
+	static void expand(String s,int low, int high,Set<String> a){
 		
-
-		for(int i=0;i<l;i++){
-			StringBuilder sb = new StringBuilder();	
-			sb.append(s.charAt(i));
+		while(low >=0 && high < s.length() && s.charAt(low) == s.charAt(high)){
 			
+			a.add(s.substring(low, high - low + 1));
 			
+			low--;
+			high++;
 		}
 		
+		 
+	}
+	
+	 static void allPalindromes(String s){
+		Set<String> Palindromes = new HashSet<String>();
+		
+		for(int i=0;i<s.length();i++){
+			
+			//odd 
+			expand(s,i,i,Palindromes);
+			//evens
+			expand(s,i,i+1,Palindromes);
+		}
+		
+		/*
+		for(String a : Palindromes){
+			System.out.println(a);
+			
+		}
+		*/
 		
 	}
 	public static void main(String[] args){
-		
+		Palindromes.allPalindromes("aaaabbbaaaa");
 		
 	}
 }
