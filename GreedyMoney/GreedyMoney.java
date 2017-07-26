@@ -1,26 +1,34 @@
 public class GreedyMoney{
    
-   static void coinCount(int n){
-      int[] coins = new int[]{25,10,5,1};
-      int[] amount = new int[coins.length];
-      int l = coins.length;
+	// m is size of coins array (number of different coins)
+    static int minCoins(int coins[], int m, int V)
+    {
+       // base case
+       if (V == 0) return 0;
       
-      for(int i=0;i<l;i++){
-         while(n>=coins[i]){
-            n-=coins[i];
-            amount[i]++;
+       // Initialize result
+       int res = Integer.MAX_VALUE;
+      
+       // Try every coin that has smaller value than V
+       for (int i=0; i<m; i++)
+       {
+         if (coins[i] <= V)
+         {
+             int sub_res = minCoins(coins, m, V-coins[i]);
+      
+             // Check for INT_MAX to avoid overflow and see if
+             // result can minimized
+             if (sub_res != Integer.MAX_VALUE && sub_res + 1 < res)
+                res = sub_res + 1;
          }
-      }
-      for(int i=0;i<l;i++){
-         System.out.print(amount[i]+" ");
-      } 
-      System.out.println();  
-   }
+       }
+       return res;
+    }
    
    public static void main(String[] args){
-      GreedyMoney.coinCount(100);
-      GreedyMoney.coinCount(14);
-      GreedyMoney.coinCount(99);
-      GreedyMoney.coinCount(20);
+	   int[] coins = {1,5,10,25};
+	   int m = coins.length;
+	   int V = 32;
+	   System.out.println("Minimum coins required is "+ minCoins(coins, m, V) );
    }
 }
