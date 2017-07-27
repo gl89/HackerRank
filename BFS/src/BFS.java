@@ -77,35 +77,43 @@ public class BFS {
 		}		
 	}
 	
+	static int maxHeight(Node root){
+		if(root==null){ 
+			return 0;
+		}
+		return Math.max(maxHeight(root.left), maxHeight(root.right)) + 1;
+	}
+	
 	
 	public static void main(String[] args){
 		Node root = new Node(10);
 		Node head = root;
 		
-		BFS.insert(root,3);
-		BFS.insert(root,11);
-		BFS.insert(root,13);
-		BFS.insert(root,12);
+		BFS.insert(root,1);
 		BFS.insert(root,2);
+		BFS.insert(root,3);
+		BFS.insert(root,4);
+		BFS.insert(root,5);
 		
 		
 		System.out.println("preOrder");
-		BFS.preOrder(head);
+		preOrder(head);
 		System.out.println();
 		System.out.println("postOrder");
-		BFS.postOrder(head);
+		postOrder(head);
 		System.out.println();
 		System.out.println("inOrder");
-		BFS.inOrder(head);
+		inOrder(head);
 		System.out.println();
 		System.out.println("BFS");
-		BFS.BreadthFS(head);
+		BreadthFS(head);
 		System.out.println();
 		System.out.println("BFS");
-		BFS.printLeaves(head);
+		printLeaves(head);
 		System.out.println();
 		System.out.println("BFS");
 		System.out.println(BFS.countLeaves(head)+" Leaves");
+		System.out.println(maxHeight(head));
 		
 	}
 
