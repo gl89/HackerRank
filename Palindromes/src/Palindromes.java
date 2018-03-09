@@ -8,7 +8,7 @@ public class Palindromes {
 		while(low >= 0 && high < s.length() && (s.charAt(low) == s.charAt(high))){		
 			//we don't like single letters
 			if(s.substring(low, high + 1).length() != 1){
-					a.add(s.substring(low, high + 1));
+					a.add(s.substring(low, high + 1)); 
 			}	
 		    low--;
 			high++;
@@ -28,7 +28,7 @@ public class Palindromes {
 		}
 	}
 	public static void main(String[] args){
-		Palindromes.allPalindromes("abbaeae");
+		Palindromes.allPalindromes("abba");
 		
 	}
 }

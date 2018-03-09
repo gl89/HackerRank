@@ -1,3 +1,9 @@
+//interview question
+//Gabriel Loterena
+//Back at it
+//3/8/2018
+//git
+
 public class GreedyMoney{
    
 	// m is size of coins array (number of different coins)

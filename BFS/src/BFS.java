@@ -91,10 +91,9 @@ public class BFS {
 		
 		BFS.insert(root,1);
 		BFS.insert(root,2);
-		BFS.insert(root,3);
-		BFS.insert(root,4);
-		BFS.insert(root,5);
-		
+		//BFS.insert(root,3);
+		//BFS.insert(root,4);
+		//BFS.insert(root,5);
 		
 		System.out.println("preOrder");
 		preOrder(head);
