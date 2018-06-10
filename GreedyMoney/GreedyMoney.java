@@ -1,8 +1,8 @@
-//interview question
 //Gabriel Loterena
 //Back at it
-//3/8/2018
+//3/11/2018
 //git
+//
 
 public class GreedyMoney{
    
