@@ -1,3 +1,4 @@
+
 /*
 Gabriel Loterena
 8/24/2016
@@ -17,21 +18,21 @@ import java.util.*;
 
 public class Solution {
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        scan.nextLine();
-        String line;
-        int l,count;
-        for(int i=0;i<n;i++){
-            line=scan.nextLine();
-            l=line.length();
-            count=0;
-            for(int j=0;j<l-1;j++){
-                if(line.charAt(j)==line.charAt(j+1))
-                    count++;
-            }
-            System.out.println(count);
-        }
-    }
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		scan.nextLine();
+		String line;
+		int l, count;
+		for (int i = 0; i < n; i++) {
+			line = scan.nextLine();
+			l = line.length();
+			count = 0;
+			for (int j = 0; j < l - 1; j++) {
+				if (line.charAt(j) == line.charAt(j + 1))
+					count++;
+			}
+			System.out.println(count);
+		}
+	}
 }

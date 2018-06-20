@@ -1,3 +1,4 @@
+
 /*
 Gabriel Loterena
 7/16/2016
@@ -9,30 +10,31 @@ import java.io.*;
 import java.util.*;
 
 public class Person {
-    private int age;	
-  
+	private int age;
+
 	public Person(int initialAge) {
-  		if(initialAge<0){//condition 1a
-            System.out.println("Age is not valid, setting age to 0.");
-            age = 0;
-        }else{//condition 1b
-            age = initialAge; 
-        }
+		if (initialAge < 0) {// condition 1a
+			System.out.println("Age is not valid, setting age to 0.");
+			age = 0;
+		} else {// condition 1b
+			age = initialAge;
+		}
 	}
 
-	public void amIOld() {//condition 2 
-  		if(age < 13)
-            System.out.println("You are young.");
-        if(age >= 13 && age < 18)
-            System.out.println("You are a teenager.");
-        if(age >= 18)
-            System.out.println("You are old.");
+	public void amIOld() {// condition 2
+		if (age < 13)
+			System.out.println("You are young.");
+		if (age >= 13 && age < 18)
+			System.out.println("You are a teenager.");
+		if (age >= 18)
+			System.out.println("You are old.");
 	}
 
 	public void yearPasses() {
-  		age++;
+		age++;
 	}
-   public static void main(String[] args) {
+
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		for (int i = 0; i < T; i++) {
@@ -44,7 +46,7 @@ public class Person {
 			}
 			p.amIOld();
 			System.out.println();
-        }
+		}
 		sc.close();
-    }
+	}
 }

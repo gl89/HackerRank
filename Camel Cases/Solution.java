@@ -8,7 +8,6 @@ THis is very similar to other problems, but you need to know some regex expressi
 instantly pop in your mind when you look that the problem. 
 */
 
-
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -17,10 +16,10 @@ import java.util.regex.*;
 
 public class Solution {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String s = in.next();
-        String[] r = s.split("(?=\\p{Lu})");
-        System.out.println(r.length);
-    }
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String s = in.next();
+		String[] r = s.split("(?=\\p{Lu})");
+		System.out.println(r.length);
+	}
 }
