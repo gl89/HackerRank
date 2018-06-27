@@ -2,7 +2,6 @@
 //Back at it
 //3/11/2018
 //git
-//
 
 public class GreedyMoney {
 
